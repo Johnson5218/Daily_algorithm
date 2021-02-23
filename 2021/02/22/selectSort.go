@@ -19,6 +19,3 @@ func SelectSort() {
 	fmt.Println(arr)
 }
 
-func main() {
-	SelectSort()
-}
