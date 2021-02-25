@@ -26,14 +26,18 @@ func sink(a []int, i int, length int) {
 		r := i*2 + 2
 		// idx保存根、左、右三者之间较大值的索引
 		idx := i
+
+		// 下面两个if可以取到三个节点中最大的那个节点下标，这个值的下标存在idx中
 		// 存在左节点，左节点值较大，则取左节点
 		if l < length && a[l] > a[idx] {
 			idx = l
 		}
-		// 存在有节点，且值较大，取右节点
+		// 存在右节点，且值较大，取右节点
 		if r < length && a[r] > a[idx] {
 			idx = r
 		}
+
+
 		// 如果根节点较大，则不用下沉
 		if idx == i {
 			break
@@ -44,6 +48,8 @@ func sink(a []int, i int, length int) {
 		i = idx
 	}
 }
+
+
 func swap(a []int, i, j int) {
 	a[i], a[j] = a[j], a[i]
 }
